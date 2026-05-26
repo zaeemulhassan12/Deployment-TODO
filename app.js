@@ -13,6 +13,9 @@ app.set("view engine", "ejs");
 
 const db = new sqlite3.Database("./database/todo.db");
 
+const db = new sqlite3.Database(
+    path.join(__dirname, "database", "todo.db")
+);
 db.run(`
 CREATE TABLE IF NOT EXISTS todos (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
